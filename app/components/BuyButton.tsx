@@ -11,7 +11,11 @@ const BuyButton = () => {
     window.location.href = data.url;
   };
 
-  return <button onClick={handleCheckout}>Buy Now</button>;
+  return (
+    <button onClick={handleCheckout} className="btn btn-primary btn-block">
+      Buy Now
+    </button>
+  );
 };
 
 export default BuyButton;
