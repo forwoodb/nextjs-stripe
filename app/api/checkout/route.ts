@@ -4,7 +4,8 @@ import { stripe } from "@/app/lib/stripe";
 export async function POST() {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    mode: "payment",
+    mode: "subscription",
+    // mode: "payment",
     line_items: [
       {
         price_data: {
@@ -12,7 +13,7 @@ export async function POST() {
           product_data: {
             name: "Premium Plan",
           },
-          unit_amount: 999,
+          unit_amount: 99,
         },
         quantity: 1,
       },
